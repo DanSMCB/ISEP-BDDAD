@@ -1,0 +1,22 @@
+Naming conventions
+
+Constraints:
+	unique: un + table + attribute (value can't be repeated)
+		example: un_ship_imo
+
+	not null: nn + table + attribute (value can't be NULL)
+		  example: nn_ship_name
+
+	check: 	ck + table + attribute (used for mathematical expressions)
+		example: ck_ship_latitude_lower (latitude has to be higher or equal to -90)
+
+
+Keys:
+	primary key: pk + table
+		     example: pk_ship
+
+	foreign key: fk + table
+		     example: fk_ship_positioning
+
+		     When defining a foreign key in a table the attribute name is '*table it refers to* + attribute'
+		     example: country_name (present in table location; refers to the attriute 'name' in the table 'country')

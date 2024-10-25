@@ -1,0 +1,10 @@
+Rationale for the use of a relational database
+
+Ship 1..N Container : Each ship transports several containers and to identify where was each container, there is a foreign key 'ship_mmsi' in the container table.
+Truck 1..1 Container : Each truck will transport only one container at a time.
+Ship 1..N Ship Positioning Data : A ship will have several data relating to its position along the route and the ship positioning data has its own primary key ('base_date_time' + 'ship_mmsi').
+Country 1..N Location : A country can have several locations where there are ports or warehouses.
+Location 1..1 Destination : A location refers only to one destination.
+Port/Warehouse -> Destination : Generalization since both entities will have the same attribues.
+Destination 1..N Cargo Manifest : Several cargo manifests will be delivered from the same destination, which is why 'destination_id' is a primary and foreign key of the table 'cargo manifest'.
+Container_cargoManifest : Entity created because of the relation 'Container N..N Cargo Manifest', this entity will have 'container_id' and cargo_manifest_destination_id' as both the primary and foreign key
